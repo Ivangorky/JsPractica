@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Resultado: <span class="resultado"></span>
+            </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="text">
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="text">
+                    </div>
+                    <div style="display: flex">
+                        <button id="btn-sumar" type="button">
+                            Sumar
+                        </button>
+                        <button id="btn-restar" type="button">
+                            Restar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+//variables
+        const num1 = document.querySelector('#valor1');
+        const num2 = document.querySelector('#valor2');
+        const btnsuma =document.querySelector('#btn-sumar');
+        const btnresta =document.querySelector('#btn-restar');
+        const resultado =document.querySelector('.resultado');
+//función sumar
+        btnsuma.addEventListener('click', function(){ 
+            const numero1 = parseInt(num1.value);
+            const numero2 = parseInt(num2.value);
+//resultado sumar
+            resultado.innerHTML = numero1 + numero2;
+})
+//función restar
+btnresta.addEventListener('click', function(){ 
+            const numero1 = parseInt(num1.value);
+            const numero2 = parseInt(num2.value);
+//resultado restar y si resultado es negativo devolver por respuesta un "0"
+            resultado.innerHTML = numero1 - numero2 >=0 ? numero1 - numero2 : 0;
+})
+    </script>
+</body>
+
+</html>
